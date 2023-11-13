@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'sign_in.dart';
+import 'sign_up.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -42,7 +44,13 @@ class _SplashScreenState extends State<SplashScreen> {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.deepPurple,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SignIn(),
+                      ));
+                },
                 child: const Text(
                   "Sign In ",
                   style: TextStyle(fontSize: 18, color: Colors.white),
@@ -52,7 +60,13 @@ class _SplashScreenState extends State<SplashScreen> {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.white,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SignUp(),
+                      ));
+                },
                 child: const Text(
                   "Sign Up",
                   style: TextStyle(fontSize: 18, color: Colors.deepPurple),

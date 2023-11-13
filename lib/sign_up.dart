@@ -1,27 +1,14 @@
 import 'package:flutter/material.dart';
+import 'sign_in.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class SignUp extends StatelessWidget {
+class SignUp extends StatefulWidget {
   const SignUp({super.key});
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: '',
-      theme: ThemeData(
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(),
-    );
-  }
+  State<SignUp> createState() => _SignUpState();
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
+class _SignUpState extends State<SignUp> {
   var username = TextEditingController();
   var email = TextEditingController();
   var password = TextEditingController();
@@ -121,6 +108,36 @@ class _MyHomePageState extends State<MyHomePage> {
                       style: TextStyle(
                           fontSize: 20, fontWeight: FontWeight.normal),
                     )),
+              ),
+              const SizedBox(
+                height: 5,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    'All Ready Have An Account',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SignIn(),
+                          ));
+                    },
+                    child: const Text(
+                      'Sign In',
+                      style: TextStyle(
+                          fontSize: 18,
+                          color: Colors.blue,
+                          fontWeight: FontWeight.w900,
+                          decoration: TextDecoration.underline,
+                          decorationColor: Colors.blue),
+                    ),
+                  )
+                ],
               ),
               const SizedBox(
                 height: 10,
